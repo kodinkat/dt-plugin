@@ -34,6 +34,8 @@ abstract class MagicLink extends DT_Magic_Url_Base {
          *                          If True, lookup field to be provided within plugin for contacts only searching.
          *                          If false, Dropdown option to be provided for user, team or group selection.
          *      - fields:       List of fields to be displayed within magic link frontend form.
+         *      - icon:         Custom font icon to be associated with magic link.
+         *      - show_in_home_apps:    Boolean flag indicating if magic link should be automatically loaded and shown within Home Screen Plugin.
          */
         $this->meta = [
             'app_type'      => 'magic_link',
@@ -44,7 +46,9 @@ abstract class MagicLink extends DT_Magic_Url_Base {
                     'id'    => 'name',
                     'label' => 'Name'
                 ]
-            ]
+            ],
+            'icon'           => 'mdi mdi-cog-outline',
+            'show_in_home_apps' => false
         ];
 
         $this->meta_key  = $this->root . '_' . $this->type . '_magic_key';
